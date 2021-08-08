@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} Postni o'chirish {% endblock %}
+
+
+{% block content %}
+
+
+<h1> O'chirish </h1><br>
+<h3>{{post.title}} postini o'chirish </h3>
+<div class="form-control">
+	<form method="POST">
+		{% csrf_token %}
+	<strong>Ishonchingiz komilmi?</strong><br>
+	</form>
+	<button class="btn btn-secondary">Delete</button>
+</div>
+	
+{% endblock %}

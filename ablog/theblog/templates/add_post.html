@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Yangi post yaratish {% endblock %}
+
+
+{% block content %}
+
+
+<h1> Post qo'shish </h1><br>
+<div class="form-control">
+	<form method="POST">
+		{% csrf_token %}
+		{{form.as_p}}
+	</form>
+	<button class="btn btn-secondary">Post</button>
+</div>
+	
+{% endblock %}

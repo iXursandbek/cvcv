@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Article Details{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home saxifa</title>
+</head>
+<body>
+	<h1>Post saxifa</h1>
+	<ul>
+		{% for post in object_list %}
+		<li>
+			<a href="{% url 'article-detail' post.pk %}"> {{ post.title }} </a>   - {{ post.author }} - <a href="{% url 'update_post' post.pk %}">Edit</a> -
+			<a href="{% url 'delete_post' post.pk %}">Delete</a>
+
+			<br>
+			{{ post.body }}
+		</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>
+
+{% endblock %}
